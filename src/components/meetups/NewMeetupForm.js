@@ -3,7 +3,7 @@ import Card from '../ui/Card';
 
 import classes from './NewMeetupForm.module.css';
 
-function NewMeetupForm() {
+function NewMeetupForm(props) {
 
     const titleInputRef = useRef();
     const imageInputRef = useRef();
@@ -26,7 +26,7 @@ function NewMeetupForm() {
         };
 
 
-        console.log(meetupData);
+        props.addMeetupHandler(meetupData);
     }
     return <Card>
         <form className={classes.form} onSubmit={submiteHandler}>
